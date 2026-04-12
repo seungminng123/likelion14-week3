@@ -10,7 +10,7 @@ const Buttonstyled = styled.button`
     cursor: pointer;
     margin-left: 10px;
 `;
-function Button({text,onClick,background}) {
-    return <Buttonstyled onClick={onClick} background={background}>{text}</Buttonstyled>;
+function Button({text,onClick,background,type}) {
+    return <Buttonstyled type = {type} onClick={onClick} background={background}>{text}</Buttonstyled>;
 }
 export default Button;

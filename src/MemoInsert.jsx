@@ -7,16 +7,17 @@ function MemoInsert({ onInsert }) { //이벤트를 전달할떈 on**형태로 �
     function handleChange(e) {
         setText(e.target.value);
     }
-    function handleClick() {
+    function handleSubmit(e) {
+        e.preventDefault();
         onInsert(text);
         setText("");
         console.log(text);
     }
     return (
-        <div>
+        <form onSubmit={handleSubmit}>
             <input type="text" placeholder="메모를 입력하세요" value={text} onChange={handleChange} />
-            <Button onClick={handleClick} background ="#32bb00" text="추가"/>
-        </div>
+            <Button type = "submit" background ="#32bb00" text="추가"/>
+        </form>
     );
 }
 export default MemoInsert;
